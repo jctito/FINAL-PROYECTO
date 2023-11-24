@@ -3,7 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ClienteDAO {
+public class ComercialDAO {
     public static void crearClienteDB(Cliente cliente) {
         Conexion db_connet = new Conexion();
         try (Connection conexion = db_connet.get_conConnection()) {
@@ -15,7 +15,6 @@ public class ClienteDAO {
                 ps.setString(2, cliente.getApellido1());
                 ps.setString(3, cliente.getApellido2());
                 ps.setString(4, cliente.getCiudad());
-                ps.setInt(5, cliente.getCategoria());
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -76,7 +75,7 @@ public class ClienteDAO {
         try (Connection conexion = db_connet.get_conConnection()) {
             PreparedStatement ps;
             try {
-                String query = "UPDATE  cliente SET nombre=?, apellido1=?,apellido2=?,ciudad=? WHERE id=?";
+                String query = "UPDATE  cliente SET nombre=?, email=?,telefono`=?, WHERE id=?";
                 ps = conexion.prepareStatement(query);
                 ps.setString(1, cliente.getNombre());
                 ps.setString(2, cliente.getApellido1());

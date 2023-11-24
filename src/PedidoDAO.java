@@ -3,7 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ClienteDAO {
+public class PedidoDAO {
     public static void crearClienteDB(Cliente cliente) {
         Conexion db_connet = new Conexion();
         try (Connection conexion = db_connet.get_conConnection()) {
