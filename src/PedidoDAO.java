@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PedidoDAO {
-    public static void crearClienteDB(Cliente cliente) {
+    public static void crearPedidoDB(Cliente cliente) {
         Conexion db_connet = new Conexion();
         try (Connection conexion = db_connet.get_conConnection()) {
             PreparedStatement ps = null;
@@ -15,7 +15,6 @@ public class PedidoDAO {
                 ps.setString(2, cliente.getApellido1());
                 ps.setString(3, cliente.getApellido2());
                 ps.setString(4, cliente.getCiudad());
-                ps.setInt(5, cliente.getCategoria());
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -82,7 +81,6 @@ public class PedidoDAO {
                 ps.setString(2, cliente.getApellido1());
                 ps.setString(3, cliente.getApellido2());
                 ps.setString(4, cliente.getCiudad());
-                ps.setInt(5, cliente.getCategoria());
                 ps.setInt(6, cliente.getId());
                 ps.executeUpdate();
                 System.out.println("Se actualizo correctamente");

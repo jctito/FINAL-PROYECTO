@@ -4,7 +4,6 @@ public class Cliente {
     String apellido1;
     String apellido2;
     String ciudad;
-    int categoria;
 
     public Cliente() {
 
@@ -16,7 +15,6 @@ public class Cliente {
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.ciudad = ciudad;
-        this.categoria = categoria;
     }
 
     public int getId() {
@@ -57,13 +55,6 @@ public class Cliente {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
-    }
 
-    public int getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
     }
 }

@@ -24,8 +24,6 @@ public class PedidoService {
         cliente.setApellido1(apellido1);
         cliente.setApellido2(apellido2);
         cliente.setCiudad(ciudad);
-        cliente.setCategoria(cliente.categoria);
-
         ClienteDAO.crearClienteDB(cliente);
 
     }
@@ -53,9 +51,6 @@ public class PedidoService {
         System.out.println("escribe nuevo ciudad ");
         String   ciudad =juan.nextLine();
 
-        System.out.println("indique el ID categoria ");
-        int  id_categoria =juan.nextInt();
-
 
 
         Cliente  acliente =new Cliente();
@@ -63,7 +58,6 @@ public class PedidoService {
         acliente.setApellido1(apellido1);
         acliente.setApellido2(apellido2);
         acliente.setCiudad(ciudad);
-        acliente.setId(id_categoria);
         ClienteDAO.actualizarCliente(acliente);
 
 

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ComercialService {
-    public static void crearCliente(){
+    public static void crearComercial(){
         Scanner juan = new Scanner(System.in);
         System.out.println("escribe tu nombre: ");
         String nombre =juan.nextLine();
@@ -12,34 +12,27 @@ public class ComercialService {
         System.out.println("escribe tu apellido2: ");
         String apellido2 = juan.nextLine();
 
-        System.out.println("escribe tu ciudad: ");
-        String ciudad = juan.nextLine();
-
-        System.out.println("escribe tu ID categoria: ");
-        int id_categoria = juan.nextInt();
 
 
-        Cliente cliente = new Cliente();
-        cliente.setNombre(nombre);
-        cliente.setApellido1(apellido1);
-        cliente.setApellido2(apellido2);
-        cliente.setCiudad(ciudad);
-        cliente.setCategoria(cliente.categoria);
+        Comercial comercial = new Comercial();
+        comercial.setNombre(nombre);
+        comercial.setApellido1(apellido1);
+        comercial.setApellido1(apellido2);
 
-        ClienteDAO.crearClienteDB(cliente);
+        ComercialDAO.crearComercialDB(comercial);
 
     }
-    public static void listarCliente(){
-        ClienteDAO.leerClienteDB();
+    public static void listarComercial(){
+        ComercialDAO.leerComercialDB();
 
     }
-    public static void borrarCliente(){
+    public static void borrarComercial(){
         Scanner juan = new Scanner(System.in);
         System.out.println("Indique el ID del cliente a borrar: ");
-        int id_cliente = juan.nextInt();
-        ClienteDAO.borrarCliente(id_cliente);
+        int id_comercial = juan.nextInt();
+        ComercialDAO.borrarComercial(id_comercial);
     }
-    public static void editarCliente(){
+    public static void editarComercial(){
         Scanner juan = new Scanner(System.in);
         System.out.println("escribe nuevo nombre ");
         String nombre =juan.nextLine();
@@ -50,21 +43,14 @@ public class ComercialService {
         System.out.println("escribe nuevo apellido2 ");
         String apellido2 =juan.nextLine();
 
-        System.out.println("escribe nuevo ciudad ");
-        String   ciudad =juan.nextLine();
-
-        System.out.println("indique el ID categoria ");
-        int  id_categoria =juan.nextInt();
 
 
 
-        Cliente  acliente =new Cliente();
-        acliente.setNombre(nombre);
-        acliente.setApellido1(apellido1);
-        acliente.setApellido2(apellido2);
-        acliente.setCiudad(ciudad);
-        acliente.setId(id_categoria);
-        ClienteDAO.actualizarCliente(acliente);
+        Comercial  acomercial =new Comercial();
+        acomercial.setNombre(nombre);
+        acomercial.setApellido1(apellido1);
+        acomercial.setApellido1(apellido2);
+        ComercialDAO.actualizarComercial(acomercial);
 
 
     }

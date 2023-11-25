@@ -9,13 +9,12 @@ public class ClienteDAO {
         try (Connection conexion = db_connet.get_conConnection()) {
             PreparedStatement ps = null;
             try {
-                String query = "INSERT INTO `dbtienda`.`cliente` (`nombre`, `email`, `telefono`) VALUES (?, ?, ?)";
+                String query = "INSERT INTO `ventas`.`cliente` (`id`, `nombre`, `apellido1`, `apellido2`, `ciudad`) VALUES (?, ?, ?, ?);";
                 ps = conexion.prepareStatement(query);
                 ps.setString(1, cliente.getNombre());
                 ps.setString(2, cliente.getApellido1());
                 ps.setString(3, cliente.getApellido2());
                 ps.setString(4, cliente.getCiudad());
-                ps.setInt(5, cliente.getCategoria());
                 ps.executeUpdate();
             } catch (SQLException ex) {
                 System.out.println(ex);
@@ -40,7 +39,6 @@ public class ClienteDAO {
                 System.out.println("Apellido1: " + rs.getString("apellido1"));
                 System.out.println("Apellido2: " + rs.getString("apellido2"));
                 System.out.println("Ciudad: " + rs.getString("ciudad"));
-                System.out.println("Categoria: " + rs.getInt("categoria"));
                 System.out.println("***");
             }
         } catch (SQLException e) {
@@ -76,13 +74,12 @@ public class ClienteDAO {
         try (Connection conexion = db_connet.get_conConnection()) {
             PreparedStatement ps;
             try {
-                String query = "UPDATE  cliente SET nombre=?, apellido1=?,apellido2=?,ciudad=? WHERE id=?";
+                String query = "UPDATE  cliente SET nombre=?, apellido1=?,apellido2=?,ciudad=? ,categoria=? WHERE id=?";
                 ps = conexion.prepareStatement(query);
                 ps.setString(1, cliente.getNombre());
                 ps.setString(2, cliente.getApellido1());
                 ps.setString(3, cliente.getApellido2());
                 ps.setString(4, cliente.getCiudad());
-                ps.setInt(5, cliente.getCategoria());
                 ps.setInt(6, cliente.getId());
                 ps.executeUpdate();
                 System.out.println("Se actualizo correctamente");

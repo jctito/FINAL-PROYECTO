@@ -5,7 +5,7 @@ public class Conexion {
     public Connection get_conConnection(){
         Connection conection =null;
         try{
-            conection= DriverManager.getConnection( "jdbc:mysql://localhost:3306/dbVentas","root", "");
+            conection= DriverManager.getConnection( "jdbc:mysql://localhost:3306/ventas","root", "");
             if (conection!=null){
                 System.out.println("Conexion Positiva");
             }

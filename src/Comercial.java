@@ -3,7 +3,7 @@ public class Comercial {
     String nombre;
     String apellido1;
     String apellido2;
-    String comision;
+
 
     public Comercial() {
     }
@@ -13,7 +13,6 @@ public class Comercial {
         this.nombre = nombre;
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
-        this.comision = comision;
     }
 
     public int getId() {
@@ -44,15 +43,4 @@ public class Comercial {
         return apellido2;
     }
 
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
-    }
-
-    public String getComision() {
-        return comision;
-    }
-
-    public void setComision(String comision) {
-        this.comision = comision;
-    }
 }
